@@ -1,5 +1,15 @@
 name: learn-github-actions
-on: [push]
+
+# Triggers push and pull for main branch only
+on: 
+  push:
+    branches: none
+  pull_request:
+    branches: none
+  
+  # Run from Actions tab
+  workflow_dispatch:
+
 jobs:
   check-bats-version:
     runs-on: windows-latest
